@@ -11,4 +11,12 @@ class Image extends Model
         'storage_name',
         'views',
     ];
+
+    // helper
+
+    public function attachImage($file)
+    {
+        // store image
+        // make thumbnail
+    }
 }
