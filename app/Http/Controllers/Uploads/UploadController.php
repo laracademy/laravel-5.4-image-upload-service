@@ -37,7 +37,7 @@ class UploadController extends Controller
                     'storage_name' => $storageName,
                 ]);
 
-                $image->attachImage($file);
+                $image->attachImage($file, $storageName);
 
                 return response($image, 200);
             }
