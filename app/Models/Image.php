@@ -30,4 +30,16 @@ class Image extends Model
         // store
         Storage::disk('thumbnails')->put('thumb_'. $filename, (string) $thumbnail->encode());
     }
+
+    public function increaseView()
+    {
+        // incrase the view count
+        $this->views += 1;
+        $this->save();
+    }
+
+    public function imagePath()
+    {
+        return Storage::disk('images')->url($this->storage_name);
+    }
 }

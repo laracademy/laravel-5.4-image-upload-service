@@ -19,3 +19,7 @@ Route::group(['namespace' => 'Uploads'], function() {
     Route::get('create')->uses('UploadController@create')->name('upload.create');
     Route::post('store')->uses('UploadController@store')->name('upload.store');
 });
+
+Route::group(['namespace' => 'Image'], function() {
+    Route::get('view/{image}')->uses('ImageController@view')->name('image.view');
+});
