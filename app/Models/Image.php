@@ -42,4 +42,9 @@ class Image extends Model
     {
         return Storage::disk('images')->url($this->storage_name);
     }
+
+    public function thumbnailPath()
+    {
+        return Storage::disk('thumbnails')->url('thumb_'. $this->storage_name);
+    }
 }

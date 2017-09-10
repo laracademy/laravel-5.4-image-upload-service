@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/')->uses('Home\HomeController@index')->name('home');
 
 Route::group(['namespace' => 'Uploads'], function() {
     Route::get('create')->uses('UploadController@create')->name('upload.create');
