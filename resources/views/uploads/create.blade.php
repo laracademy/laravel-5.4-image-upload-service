@@ -61,5 +61,17 @@
                 });
             }
         };
+
+        document.onpaste = function(event) {
+            var items = (event.clipboardData || event.originalEvent.clipboardData).items;
+
+            for(index in items) {
+                var item = items[index];
+
+                if(item.kind == 'file') {
+                    Dropzone.forElement('#frmFile').addFile(item.getAsFile());
+                }
+            }
+        }
     </script>
 @endpush
